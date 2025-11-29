@@ -44,7 +44,7 @@ function generatePerson(dataset, minAge, maxAge) {
  * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
  * @returns {Array} of employees
  */
-/*export*/ function main(dtoIn) {
+export function main(dtoIn) {
     let dtoOut = [];
 
     for (let i = 0; i < dtoIn.count; i++) {
