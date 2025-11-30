@@ -1,3 +1,4 @@
+
 let names = [
     {
         gender: "male",
@@ -16,7 +17,6 @@ let workloads = [10, 20, 30, 40];
 
 
 function generateBirthday(minAge, maxAge) {
-    console.log("Typ: " + typeof(maxAge));
     let generatedDate = new Date(); // Generate current time
 
     generatedDate.setFullYear(generatedDate.getFullYear() - maxAge); // Set time to max age
@@ -27,11 +27,9 @@ function generateBirthday(minAge, maxAge) {
 }
 
 function generatePerson(dataset, minAge, maxAge) {
-    console.log("Age je " + maxAge);
     return {
             gender: dataset.gender,
-            //birthday: /*generateBirthday(minAge, maxAge).toISOString()*/null,
-            birthday: generateBirthday(minAge, maxAge).toISOString(),
+            birthdate: generateBirthday(minAge, maxAge).toISOString(),
             name: dataset.names[Math.floor(Math.random() * dataset.names.length)],
             surname: dataset.surnames[Math.floor(Math.random() * dataset.surnames.length)],
             workload: workloads[Math.floor(Math.random() * workloads.length)]
