@@ -17,13 +17,19 @@ let workloads = [10, 20, 30, 40];
 
 
 function generateBirthday(minAge, maxAge) {
-    let generatedDate = new Date(); // Generate current time
+    const now = new Date();
 
-    generatedDate.setFullYear(generatedDate.getFullYear() - maxAge); // Set time to max age
-    generatedDate.setFullYear(generatedDate.getFullYear() + Math.floor(Math.random() * (maxAge - minAge - 1))); // Set year to random number in range (1 year is dedicated to random months and days)
-    generatedDate.setMonth(Math.floor(Math.random() * 12));
-    generatedDate.setDate(Math.floor(Math.random() * 31));
-    return generatedDate;
+    const youngest = new Date(now);
+    youngest.setFullYear(youngest.getFullYear() - minAge);
+
+    const oldest = new Date(now);
+    oldest.setFullYear(oldest.getFullYear() - maxAge);
+
+    const oldestTime = oldest.getTime();
+    const diff = youngest.getTime() - oldestTime; // in ms
+
+    const randomTime = oldestTime + Math.random() * diff;
+    return new Date(randomTime);
 }
 
 function generatePerson(dataset, minAge, maxAge) {
@@ -37,8 +43,8 @@ function generatePerson(dataset, minAge, maxAge) {
 }
 
 /**
- * The main function which calls the application.
- * Please, add specific description here for the application purpose.
+ * Generator of employees
+ * 
  * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
  * @returns {Array} of employees
  */
