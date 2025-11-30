@@ -20,7 +20,7 @@ function generateBirthday(minAge, maxAge) {
     let generatedDate = new Date(); // Generate current time
 
     generatedDate.setFullYear(generatedDate.getFullYear() - maxAge); // Set time to max age
-    generatedDate.setFullYear(generatedDate.getFullYear() + Math.floor(Math.random() * (maxAge - minAge))); // Set year to random number in range
+    generatedDate.setFullYear(generatedDate.getFullYear() + Math.floor(Math.random() * (maxAge - minAge - 1))); // Set year to random number in range (1 year is dedicated to random months and days)
     generatedDate.setMonth(Math.floor(Math.random() * 12));
     generatedDate.setDate(Math.floor(Math.random() * 31));
     return generatedDate;
