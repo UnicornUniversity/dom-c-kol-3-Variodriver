@@ -1,4 +1,4 @@
-
+/*
 let names = [
     {
         gender: "male",
@@ -10,6 +10,22 @@ let names = [
         gender: "female",
         names: ["Ivana", "Radka", "Pavla", "Iveta", "Miroslava", "Petra", "Milena", "Jarmila", "Jaroslava", "Marcela", "Johana", "Jasmína", "Barbora", "Natálie", "Amélie", "Simona", "Michaela", "Sofie", "Jitka", "Leona", "Jana", "Lenka", "Kristýna", "Adriana", "Dana", "Karolína", "Irena", "Vanessa", "Jindřiška", "Alina", "Eliška", "Lucie", "Magdaléna", "Olga", "Anežka", "Dominika", "Aneta", "Hedvika", "Marie", "Alžběta", "Gabriela", "Antonie", "Milada", "Vilma", "Veronika"],
         surnames: ["Vachovcová", "Veberová", "Nováková", "Novotná", "Nová", "Sehnoutková", "Hájková", "Urbanová", "Milá", "Černá", "Jíránková", "Poláčková", "Kopřivová", "Smetana", "Jalovcová", "Bařáková", "Limberská", "Vavrochová", "Šavelová", "Nerudová", "Zapletalová", "Zahradníková", "Palacká", "Votrubcová", "Lopatová", "Radová", "Gebertová", "Kroupová", "Kinjo", "Šrejmová", "Zavadilová", "Janečková", "Janáčková", "Zlámalová", "Drápelová", "Donutilová", "Čermáková", "Patejdlová", "Boháčová", "Pohsoltová"]
+    }
+];
+ */
+
+// Reduced names (bcs there is limit in tests)
+let names = [
+    {
+        gender: "male",
+        names: ["Jan", "Miroslav", "Petr", "Michal", "Milan", "Antonio", "Tobiáš", "Josef", "Tim", "Vítek", "Vít", "Richard"],
+        surnames: ["Moravec", "Samek", "Briscein", "Hliněnský", "Lehotský", "Horák", "Šokalo", "Hájek", "Tolaš", "Kořínek", "Bartoš", "Sulženko"]
+    },
+
+    {
+        gender: "female",
+        names: ["Ivana", "Radka", "Pavla", "Iveta", "Miroslava", "Petra", "Milena", "Jarmila", "Jaroslava", "Marcela", "Johana", "Jasmína"],
+        surnames: ["Vachovcová", "Veberová", "Nováková", "Novotná", "Nová", "Sehnoutková", "Hájková", "Urbanová", "Milá", "Černá", "Jíránková", "Poláčková"]
     }
 ];
 
@@ -44,11 +60,11 @@ function generatePerson(dataset, minAge, maxAge) {
 
 /**
  * Generator of employees
- * 
+ *
  * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
  * @returns {Array} of employees
  */
-export function main(dtoIn) {
+ function main(dtoIn) {
     let dtoOut = [];
 
     for (let i = 0; i < dtoIn.count; i++) {
@@ -59,3 +75,9 @@ export function main(dtoIn) {
 
     return dtoOut;
 }
+
+console.log("Muzi name: " + names[0]["names"].length);
+console.log("Muzi surname: " + names[0]["surnames"].length);
+
+console.log("Muzi name: " + names[1]["names"].length);
+console.log("Muzi surname: " + names[1]["surnames"].length);
